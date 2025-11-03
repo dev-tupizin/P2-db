@@ -8,3 +8,5 @@ router.get("/:id",skinJogosController.listarUm);
 router.post("/;",skinJogosController.criar);
 router.delete("/:id",skinJogosController.deletar);
 router.put("/:id",skinJogosController.atualizar);
+
+export default router;

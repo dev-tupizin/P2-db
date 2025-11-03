@@ -54,7 +54,7 @@ export const listarUm = async (req, res) => {
     }
 }
 
-export const criar = async (res, res) => {
+export const criar = async (req, res) => {
     try {
         const {nome, jogo, reaidade, preco, categoria, dataLancamento,popularidade, disponivel} = req.body;
 

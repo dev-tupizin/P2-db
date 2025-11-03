@@ -1,21 +1,20 @@
 import { PrismaClient } from '@prisma/client';
-import { populate } from 'dotenv';
 const prisma = new PrismaClient();
 
-export const encontreTodos = async() => {
-    return await prisma.skins.findMany({
-        orderBy: {id: 'asc'}
+export const encontreTodos = async () => {
+    return await prisma.skins.findMany ({
+        orderBy: {id: 'asc' }
     });
 }
 
 export const encontreUm = async (id) => {
-    return await prisma.skins.findUnique({
+    return await prisma.skins.findUnique ({
         where: { id: Number(id)}
     })
 }
 
 export const criar = async (dado) => {
-    return await prisma.times.create({
+    return await prisma.skins.create({
         data: {
             nome: dado.nome,
             jogo: dado.jogo,
