@@ -1,15 +1,26 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// prisma/schema.prisma
 
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+// Exemplo de modelo
+model jogos {
+  id        Int      @id @default(autoincrement())
+  nome     String   @unique
+  jogo      String
+  raridade String
+  preco  String
+  categoria String
+  dataLancamento Float
+  popularidade String
+  disponivel String
+
+
+  @@map("jogos")
 }
